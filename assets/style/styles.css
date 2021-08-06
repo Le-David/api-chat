@@ -1,0 +1,77 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 16px;
+}
+
+.container {
+	--spacing: 20;
+	--mobile-width: calc(390 + 2 * var(--spacing));
+	--mobile-ratio: calc(19.5 / 9);
+	--mobile-height: calc(var(--mobile-width) * var(--mobile-ratio));
+	--mobile-ratio-percentage: calc(
+		var(--mobile-height) / var(--mobile-width) * 100%
+	);
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	padding: 20px;
+	max-width: calc(var(--mobile-width) * 1px);
+	width: 100%;
+	height: 100vh;
+}
+
+.mobile {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: var(--mobile-ratio-percentage);
+	background-color: #212229;
+	border-radius: 40px;
+}
+
+.mobile-in {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 20px;
+}
+
+.notch {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 75px;
+	z-index: 2;
+}
+
+.notch::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 40px;
+	margin: 20px 80px;
+	background-color: #212229;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+
+.screen {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 20px;
+	border-radius: 25px;
+	background-color: #ffffff;
+}
